@@ -7,11 +7,11 @@ const useCalculator = () => {
   const [operator, setOperator] = useState('');
   const operators = ['-', '+', '/', '*'];
 
-  const inputValue = (value: any) => {
+  const inputValue = (value: number) => {
     return num === 0 ? setNum(value) : setNum(num + value);
   };
 
-  const clear = (value: any) => {
+  const clear = (value: string) => {
     if (value === "C") {
       setNum(0);
       setOldNum(0);
@@ -20,7 +20,7 @@ const useCalculator = () => {
     }
   };
 
-  const deleteHandler = (label: any) => {
+  const deleteHandler = (label: string) => {
     if (label === 'DEL') {
       const convertToString = num.toString();
       const removeLastLetter = convertToString.slice(0, -1);
@@ -29,11 +29,11 @@ const useCalculator = () => {
     }
   }
 
-  const porcentage = (value: any) => {
+  const porcentage = (value: string) => {
     return value === "%" && setNum(num / 100);
   };
 
-  const changeSign = (label: any) => {
+  const changeSign = (label: string) => {
     if (label === "-/+") {
       return num > 0 ? setNum(-num) : setNum(Math.abs(num));
     }
@@ -47,10 +47,10 @@ const useCalculator = () => {
     }
   };
 
-  const calculate = (label: any) => {
+  const calculate = (label: string) => {
     const calculations: any = {
       '-': oldNum - num,
-      '+': parseFloat(oldNum) + parseFloat(num),
+      '+': parseFloat(oldNum.toString()) + parseFloat(num.toString()),
       '*': oldNum * num,
       '/': oldNum / num
     }
