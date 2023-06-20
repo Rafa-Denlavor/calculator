@@ -8,28 +8,31 @@
 }
 
 .calculatorWrapper {
-  width: 450px;
-  text-align: center;
+  width: auto;
   background-color: black;
-  height: auto;
   border-radius: 1em;
-  padding: 2em 0;
   border: 3px solid #FF9500;
+  padding: 2em;
 }
 
 .historic {
   color: #cecece;
   text-align: right;
-  margin: 1.5em 2.5em;
   word-break: break-all;
 }
 
 .result {
   color: white;
   text-align: right;
-  margin: 0 1em 1rem 0;
   font-size: 4em;
   word-break: break-all;
+  padding: 0.4em 0;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 23%);
+  gap: 8px;
 }
 
 .key {

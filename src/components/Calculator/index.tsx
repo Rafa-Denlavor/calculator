@@ -25,8 +25,8 @@ function Calculator() {
         <h1 className={styles.result}>
           {result}
         </h1>
-        {keys &&
-          keys.map(({ label, value, type }, key) => {
+        <div className={styles.buttons}>
+        {keys?.map(({ label, value, type }, key) => {
             return (
               <KeysButton
                 value={value}
@@ -45,6 +45,7 @@ function Calculator() {
               />
             );
           })}
+        </div>
       </section>
     </>
   );
